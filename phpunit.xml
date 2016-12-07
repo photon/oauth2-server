@@ -1,0 +1,12 @@
+<phpunit colors="true"
+         bootstrap="vendor/photon/photon/src/photon/testbootstrap.php"
+>
+    <testsuites>
+        <testsuite name="oauth2 server tools">
+             <directory>vendor/photon/oauth2-server/tests/</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="photon.config" value="vendor/photon/oauth2-server/config.test.php"/>
+    </php>
+</phpunit>

@@ -1,0 +1,27 @@
+{
+    "name": "photon/oauth2-server",
+    "type": "library",
+    "description": "OAuth 2 helper for photon",
+    "keywords": [
+        "photon",
+        "oauth2",
+        "server"
+    ],
+    "homepage": "http://www.photon-project.com/",
+    "license": "LGPL-2.1",
+    "authors": [
+        {
+            "name": "Community",
+            "homepage": "https://github.com/photon/oauth2-server/blob/master/CONTRIBUTORS.md"
+        }
+    ],
+    "require": {
+        "photon/photon": ">=0.3.0",
+        "bshaffer/oauth2-server-php": "~1.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "photon\\auth\\oauth2\\": "src/"
+        }
+    }
+}

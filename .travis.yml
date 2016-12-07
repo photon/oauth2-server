@@ -1,0 +1,19 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - 5.6
+
+matrix:
+  fast_finish: true
+
+before_script:
+  - ./scripts/travis
+  - composer init --no-interaction --stability=dev
+  - composer require "photon/oauth2-server:dev-master"
+  - cp vendor/photon/oauth2-server/phpunit.xml .
+  
+script: phpunit -c phpunit.xml
+
