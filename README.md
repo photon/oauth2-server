@@ -32,6 +32,10 @@ This class perform automatics convertion for $request and $response object.
         }
     }
 
-You use this class like the original "\OAuth2\Server".
+You can use this class like the original "\OAuth2\Server".
 
+3) Define your oauth server class in the project configuration
 
+    'oauth_server' => '\foo\bar\MyOAuth2Server'
+
+4) Enjoy !
