@@ -6,6 +6,18 @@ use OAuth2\ResponseInterface;
 
 class Response extends PhotonResponse implements ResponseInterface
 {
+    public function __construct(PhotonResponse $response = null)
+    {
+        parent::__construct();
+
+        if ($response !== null) {
+            $this->status_code = $response->status_code;
+            $this->headers = $response->headers;
+            $this->content = $response->content;
+            $this->COOKIE = $response->COOKIE;
+        }
+    }
+
     public function addParameters(array $parameters)
     {
         if ($this->content && $data = json_decode($this->content, true)) {
