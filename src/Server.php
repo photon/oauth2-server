@@ -34,7 +34,7 @@ abstract class Server
      *
      * @see http://openid.net/specs/openid-connect-core-1_0.html#UserInfo
      */
-    public function handleUserInfoRequest(RequestInterface $request, ResponseInterface $response = null)
+    public function handleUserInfoRequest(PhotonRequest $request, PhotonResponse $response = null)
     {
         $oauthRequest = new PhotonOAuth2Request($request);
         $oauthResponse = new PhotonOAuth2Response($response);
@@ -70,7 +70,7 @@ abstract class Server
         return $this->server->handleTokenRequest($oauthRequest, $oauthResponse);
     }
 
-    public function grantAccessToken(RequestInterface $request, ResponseInterface $response = null)
+    public function grantAccessToken(PhotonRequest $request, PhotonResponse $response = null)
     {
         $oauthRequest = new PhotonOAuth2Request($request);
         $oauthResponse = new PhotonOAuth2Response($response);
@@ -88,7 +88,7 @@ abstract class Server
      *
      * @param $response - photon\http\Response
      */
-    public function handleRevokeRequest(RequestInterface $request, ResponseInterface $response = null)
+    public function handleRevokeRequest(PhotonRequest $request, PhotonResponse $response = null)
     {
         $oauthRequest = new PhotonOAuth2Request($request);
         $oauthResponse = new PhotonOAuth2Response($response);
@@ -159,7 +159,7 @@ abstract class Server
         return $this->server->validateAuthorizeRequest($oauthRequest, $oauthResponse);
     }
 
-    public function verifyResourceRequest(RequestInterface $request, ResponseInterface $response = null, $scope = null)
+    public function verifyResourceRequest(PhotonRequest $request, PhotonResponse $response = null, $scope = null)
     {
         $oauthRequest = new PhotonOAuth2Request($request);
         $oauthResponse = new PhotonOAuth2Response($response);
@@ -167,7 +167,7 @@ abstract class Server
         return $this->server->verifyResourceRequest($oauthRequest, $oauthResponse, $scope);
     }
 
-    public function getAccessTokenData(RequestInterface $request, ResponseInterface $response = null)
+    public function getAccessTokenData(PhotonRequest $request, PhotonResponse $response = null)
     {
         $oauthRequest = new PhotonOAuth2Request($request);
         $oauthResponse = new PhotonOAuth2Response($response);
