@@ -5,12 +5,18 @@ use photon\config\Container as Conf;
 
 /*
  *  Verify the provided token is valid in the requested scope.
+ *  The requested scope is the name of the function called
  */
 class Precondition
 {
     public static function noscope(&$request)
     {
         return self::_verify($request, null);
+    }
+
+    public static function __callStatic($name, $arguments)
+    {
+        return self::_verify($arguments[0], $name);
     }
 
     public static function _verify(&$request, $scope)
@@ -26,7 +32,7 @@ class Precondition
         // Ensure the Token is valid for the requested scope
         $valid = $server->verifyResourceRequest($request, $oauthResponse, $scope);
         if ($valid === false) {
-            return $oauthResponse;
+            return new \photon\http\response\Forbidden;
         }
 
         // Store the token context in the photon request object
