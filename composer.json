@@ -17,7 +17,7 @@
     ],
     "require": {
         "photon/photon": ">=0.3.0",
-        "bshaffer/oauth2-server-php": "~1.8.0"
+        "bshaffer/oauth2-server-php": "~1.8"
     },
     "autoload": {
         "psr-4": {
